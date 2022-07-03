@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Intelligent Traffic Control</title>
+        <style>
+            .l1 {
+                position: relative;
+                top: 0px;
+                left: 0px;
+            }
+            .l2 {
+                position: relative;
+                top: 0px;
+                left: 500px;
+            }
+            .l3 {
+                position: relative;
+                top: 290px;
+                left:-380px;
+            }
+            .l4 {
+                position: relative;
+                top: 290px;
+                left:120px;
+            }
+            .img1{
+                width:660px;
+                height:250px;
+                position:absolute;
+                top:60px;
+                left:0px;
+            }
+            .img2{
+                width:660px;
+                height:250px;
+                position:absolute;
+                top:60px;
+                right:0px;
+            }
+            .img3{
+                width:660px;
+                height:250px;
+                position:absolute;
+                top:350px;
+                left:0px;
+            }
+            .img4{
+                width:660px;
+                height:250px;
+                position:absolute;
+                top:350px;
+                right:0px;
+            }
+            h1{
+                text-align:center;
+                color:white;
+            }
+            .change{
+                position:absolute;
+                top:0px;
+                right:50px;
+                height:20px;
+                width:60px;
+            }
+            .check{
+                position:absolute;
+                top:30px;
+                right:50px;
+                height:20px;
+                width:60px;
+            }
+           
+        </style>
+    </head>
+    <body style="background-color:#2b3940">
+        <div style="position:relative">
+            <button onclick="history.go(0)" class="change">change</button>
+            <button class="check"  onclick="cal({{ c1 }},{{ c2 }},{{ c3 }}, {{c4}})">check</button>
+            <h1>Intelligent Traffic Control</h1>
+
+            <img id="i1" class="img1" src="{{k1}}" />
+            <img class="l1" src="/static/traffic lights/traffic red.jpg" />
+            <img id="i2" class="img2" src="{{k2}}" />
+            <img class="l2" src="/static/traffic lights/traffic red.jpg" />
+            <img id="i3" class="img3" src="{{k3}}" />
+            <img class="l3" src="/static/traffic lights/traffic red.jpg" />
+            <img id="i4" class="img4" src="{{k4}}" />
+            <img class="l4" src="/static/traffic lights/traffic red.jpg" />
+
+            <div>
+
+                <script>
+                    function cal(c1, c2, c3, c4) {
+			            document.getElementById("i1").src = "/static/outputs34/imagenew1.jpg";
+                        document.getElementById("i2").src = "/static/outputs34/imagenew2.jpg";
+                        document.getElementById("i3").src = "/static/outputs34/imagenew3.jpg";
+                        document.getElementById("i4").src = "/static/outputs34/imagenew4.jpg";
+                        if (Math.max(c1,c2,c3,c4)==c1) {
+                            document.getElementsByClassName("l1")[0].src = "/static/traffic lights/traffic green.jpg";
+                        }
+                        else if (Math.max(c1,c2,c3,c4)==c2) {
+                            document.getElementsByClassName("l2")[0].src = "/static/traffic lights/traffic green.jpg";
+                        }
+                        else if (Math.max(c1,c2,c3,c4)==c3) {
+                            document.getElementsByClassName("l3")[0].src = "/static/traffic lights/traffic green.jpg";
+                        }
+                        else if (Math.max(c1,c2,c3,c4)==c4) {
+                            document.getElementsByClassName("l4")[0].src = "/static/traffic lights/traffic green.jpg";
+                        }
+                        
+                    }
+                    /*function cal1() {
+                        document.getElementsByClassName("l4")[0].src = "/static/traffic lights/traffic green.jpg";
+                    }*/
+
+                </script>
+
+
+</body>
+</html>
